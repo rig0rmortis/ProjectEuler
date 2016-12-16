@@ -9,25 +9,28 @@ Find the sum of all multiples of 3 or 5 below 1000.
 
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	fmt.Println(sumOfMultiples())
 }
 
-func calculateSum(arr []int) int {
+func sumOfMultiples() int {
+	nums := []int{3, 5}
 	sum := 0
-	for _, value := range arr {
-		sum += value
+	for i := 0; i < 1000; i++ {
+		if isMultipleOf(i, nums) {
+			sum += i
+		}
 	}
 	return sum
 }
 
 func isMultipleOf(n int, nums []int) bool {
 	for _, num := range nums {
-		switch n % num {
-		case 0:
+		if n%num == 0 {
 			return true
-		default:
-			return false
 		}
 	}
+	return false
 }
