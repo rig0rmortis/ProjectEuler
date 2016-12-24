@@ -2,6 +2,11 @@
 The prime factors of 13195 are 5, 7, 13 and 29.
 
 What is the largest prime factor of the number 600,851,475,143 ?
+
+Solution:
+6857
+Performance:
+go run 3.go  3028.36s user 1.04s system 100% cpu 50:28.13 total
 */
 
 package main
@@ -16,7 +21,6 @@ func main() {
 func computeMaxPrimeFactor(n int64) int64 {
 	primeFactors := []int64{}
 	for _, factor := range getFactors(n) {
-		fmt.Printf("Working on factor: %d", factor)
 		if isPrime(factor) {
 			primeFactors = append(primeFactors, factor)
 		}
@@ -25,7 +29,6 @@ func computeMaxPrimeFactor(n int64) int64 {
 }
 
 func isPrime(n int64) bool {
-	fmt.Printf("Checking if %d is prime...", n)
 	for i := int64(2); i < n/2; i++ {
 		if n%i == 0 {
 			return false
@@ -35,7 +38,6 @@ func isPrime(n int64) bool {
 }
 
 func getFactors(n int64) []int64 {
-	fmt.Printf("Getting factors for %d", n)
 	factors := []int64{1, n}
 	for i := int64(2); i <= n/2; i++ {
 		if n%i == 0 {
@@ -46,7 +48,6 @@ func getFactors(n int64) []int64 {
 }
 
 func maxNum(nums []int64) int64 {
-	fmt.Printf("Getting the max number")
 	max := int64(1)
 	for _, num := range nums {
 		if num > max {
