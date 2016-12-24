@@ -11,6 +11,63 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	//fmt.Println(sum(evenElements(fibsTillLimit(4000000))))
+	fmt.Println(sumOfFibsTillLimit(4000000))
 }
+
+func sumOfFibsTillLimit(limit int) int {
+	i, j := 1, 2
+	sum := 2
+	for {
+		fib := i + j
+		if fib > limit {
+			break
+		}
+		if fib%2 == 0 {
+			sum += fib
+		}
+		i, j = j, fib
+	}
+	return sum
+}
+
+/*
+// Returns array of fibonacci numbers, with the last number being less than n
+func fibsTillLimit(limit int) []int {
+	sliceOfFibs := []int{1, 2}
+	curr := 1
+	// not exactly safe from memory overflow errors if the provided limit is too big
+	for {
+		i, j := sliceOfFibs[curr-1], sliceOfFibs[curr]
+		fib := j + i
+		curr += 1
+		if fib <= limit {
+			Append(sliceOfFibs, fib)
+		} else {
+			break
+		}
+	}
+	return sliceOfFibs
+}
+
+func sum(nums []int) int {
+	sum := 0
+	for _, num := range nums {
+		sum += num
+	}
+	return sum
+}
+
+func evenElements(nums []int) []int {
+	evens := []int{}
+	for _, num := range nums {
+		if num%2 == 0 {
+			Append(evens, num)
+		}
+	}
+	return evenElements
+}
+*/
