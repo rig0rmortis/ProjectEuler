@@ -66,7 +66,7 @@ func maxNum(nums []int64) int64 {
 /*
 Second Attempt
 
-Notes: not much better than the first one, just a bit more compact and more space efficient
+Notes: not much better than the first one, just a bit more compact and space efficient
 */
 func computeMaxPrimeFactor2(n int64) int64 {
 	max := int64(0)
@@ -77,3 +77,9 @@ func computeMaxPrimeFactor2(n int64) int64 {
 	}
 	return max
 }
+
+/*
+Third Attempt
+
+Notes: Attempt to use a better factorization algorithm
+*/
