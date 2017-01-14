@@ -18,7 +18,7 @@ func main() {
 	if palindrome == 0 {
 		fmt.Println("No Palindrome found!")
 	} else {
-		fmt.Printf("Largest Palindrome: %d", palindrome)
+		fmt.Printf("Largest Palindrome: %d\n", palindrome)
 	}
 }
 
