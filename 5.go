@@ -6,6 +6,8 @@ What is the smallest positive number that is evenly divisible by all of the
 numbers from 1 to 20?
 
 Answer: 232792560
+
+go run 5.go  4.20s user 0.05s system 100% cpu 4.239 total
 */
 
 package main
