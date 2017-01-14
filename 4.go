@@ -51,6 +51,7 @@ func generateLargestPalindrome() int {
 		for j := i; j >= 100; j-- {
 			num := i * j
 			if checkPalindrome(num) {
+				fmt.Printf("Product of %d and %d\n", i, j)
 				return num
 			}
 		}
